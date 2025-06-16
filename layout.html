@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🔐 Code Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body class="bg-light py-4">
+<div class="container">
+    <h1 class="mb-4">🔐 Code Administration</h1>
+    {% if message %}
+    <div class="alert alert-info">{{ message }}</div>
+    {% endif %}
+    {% block body %}{% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block body %}
+<form method="POST" class="form-inline mb-3">
+    <div class="form-group mr-2">
+        <input type="text" name="new_code" placeholder="New code" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+    <button type="submit" name="generate_code" class="btn btn-success ml-2">Generate</button>
+</form>
+
+<table class="table table-striped">
+    <thead><tr><th>Code</th><th>Action</th></tr></thead>
+    <tbody>
+    {% for code in codes %}
+        <tr>
+            <td>{{ code }}</td>
+            <td>
+                <form method="POST" style="display:inline">
+                    <button name="delete" value="{{ code }}" class="btn btn-sm btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
